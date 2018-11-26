@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,136 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+					
+
+				<section class="bg-white">
+					<br><br><br><br>
+					<h2>Анимации в браузере</h2>
+					<br><br><br>
+					<p><small style="opacity: 0.5"><br>*При подготовке презентации ни один пиксель не пострадал</small></p>
+				</section>
+
+				<!-- Что такое анимация? -->
+				<!-- линейная интерполяция  -->
+
+				<section>
+					<h3>Как анимировать?</h3>
+					<div style="text-align: left;">
+						<div class="fragment fade-in">
+							<p>CSS</p>
+							<small><ul>
+								<li class="fragment fade-in">transition</li>
+								<li class="fragment fade-in">t@feyframe</li>
+							</ul></small>
+						</div>
+						<div class="fragment fade-in"><p>JS</p></div>
+						<div class="fragment fade-in"><p>Изображения</p></div>
+						<div class="fragment fade-in"><p>Canvas</p></div>
+						<div class="fragment fade-in"><p>WebGL</p></div>
+					</div>	
+				</section>
+
+				<!-- Что такое производительность? -->
+				<section>
+
+					<section>
+						<h3>Что такое производительность?</h3>
+						<div class="fragment fade-in">
+							<br>
+							<blockquote>
+								&ldquo;Производительность — это искусство избегать работую&rdquo;
+							</blockquote>
+						<!-- </div>
+						<div class="fragment fade-in"> -->
+							<br>
+							<p>Paul Lewis</p>
+						</div>
+					</section>
+					
+					<section>
+						<h3>60 FPS</h3>
+						<div class="fragment fade-in"><p>(frame rate per second)</p></div>
+						<div class="fragment fade-in"><p>1 frame ~ 16.6 ms</p></div>
+					</section>
+
+				</section>
+
+				<!-- Как работает рендеринг в браузере? -->
+				<section>
+
+					<section>
+						<h3>Как работает рендеринг в браузере?</h3>
+						<br><br>
+						<img src="/images/browser-rendring-circle.png" alt="">
+						<br><br>
+					</section>
+
+					<section>
+						<div style="text-align: left;">
+							<p class="fragment fade-in">
+								<small><strong>JavaScript</strong>  — какой либо js код ( работа с данными, добавление DOM-элементов на страницу и тд)</small>
+							</p>
+							<p class="fragment fade-in">
+								<small><strong>Style</strong>  — вычисление стилей, какие правила CSS к каким элементам применяются</small>
+							</p>
+							<p class="fragment fade-in">
+								<small><strong>Layout</strong>  — браузер вычисляет, сколько каждый элементу займет места, и где он находится на экране</small>
+							</p>
+							<p class="fragment fade-in">
+								<small><strong>Paint</strong>  — подразумевает вывод текста, цветов, изображений, границ и теней, по сути – всех визуальных частей элементов. Прорисовка обычно выполняется на нескольких поверхностях, которые называются слоями.</small>
+							</p>
+							<p class="fragment fade-in">
+								<small><strong>Composite</strong>  — т.к. части страницы были отрисованы на нескольких слоях, их нужно собрать вместе</small>
+							</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Как облегчить браузеру жизнь?</h3>
+						<br><br>
+						<p><a href="https://csstriggers.com/" target="_blank">CSS Triggers</a> — Paul Lewis</p>
+						<p><a href="https://gist.github.com/paulirish/5d52fb081b3570c81e3a" target="_blank">Gist "What forces layout / reflow"</a> — Paul Irish</p>
+						<br><br>
+					</section>
+
+					<section>
+						<div class="fragment fade-in">
+							<p><small>Если изменить свойство, которое связано только с прорисовкой, например фоновое изображение, цвет текста или его тень, другими словами, свойство, которое не влияет на макет страницы, браузер оставит макет неизменным, но ему все равно придется выполнить прорисовку.</small></p>
+							<img src="/images/browser-rendring-circle--no-layout.png" alt="">
+						</div>
+						<div class="fragment fade-in">
+							<p><small>Если же изменить свойство, которое не требует ни перерасчета макета, ни прорисовки, браузер сразу же перейдет к компоновке.</small></p>
+							<img src="/images/browser-rendring-circle--no-layout-paint.png" alt="">
+						</div>
+					</section>
+
+				</section>
+
+				
+
+
+				<section>
+					<section>
+						<p>Поиграть с шейдерами можно тут</p>
+						<h3><a href="https://www.shadertoy.com/new" target="_blank">shadertoy.com/new</a></h3>
+					</section>
+					<section data-markdown>
+						<h4></h4>
+						<script type="text/template">
+							#### Пример кода
+	
+							```
+							<section data-markdown>
+							  ## Markdown support
+	
+							  Write content using inline or external Markdown.
+							  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+							</section>
+							```
+						</script>
+					</section>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +165,8 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				transition: 'concave', // none/fade/slide/convex/concave/zoom
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
