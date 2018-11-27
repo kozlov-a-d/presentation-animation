@@ -44,13 +44,119 @@
 							<p>CSS</p>
 							<small><ul>
 								<li class="fragment fade-in">transition</li>
-								<li class="fragment fade-in">t@feyframe</li>
+								<li class="fragment fade-in">@keyframe</li>
 							</ul></small>
 						</div>
-						<div class="fragment fade-in"><p>JS</p></div>
-						<div class="fragment fade-in"><p>Изображения</p></div>
-						<div class="fragment fade-in"><p>Canvas</p></div>
-						<div class="fragment fade-in"><p>WebGL</p></div>
+						<div class="fragment fade-in"><p>SVG</p></div>
+						<div class="fragment fade-in"><p>JS</p>
+							<small><ul>
+								<li class="fragment fade-in">управление CSS-свойствами</li>
+								<li class="fragment fade-in">управление SVG</li>
+								<li class="fragment fade-in">Canvas</li>
+								<li class="fragment fade-in">WebGL</li>
+							</ul></small>
+						</div>
+					</div>	
+				</section>
+
+				<!-- CSS анимации -->
+				<section>
+
+					<section>
+						<h3>CSS анимации</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Просты</p></div>
+							<div class="fragment"><p>Выполняются вне основного потока</p></div>
+							<div class="fragment"><p>Синхронизированы с частотой обновления экрана</p></div>
+							<div class="fragment"><p>Слабый контроль</p></div>
+						</div>	
+					</section>
+
+					<section>
+						<h3>Пример: transition</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Код и пример</p></div>
+						</div>	
+					</section>
+
+					<section>
+						<h3>Пример: @keyframe</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Код и пример</p></div>
+						</div>	
+					</section>
+
+				</section>
+
+				<!-- SVG анимации -->
+				<section>
+
+					<section>
+						<h3>SVG анимации</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Умирают</p></div>
+						</div>	
+					</section>
+
+					<section>
+						<h3>Пример</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Код и пример</p></div>
+						</div>	
+					</section>
+
+				</section>
+
+				<!-- JS анимации -->
+				<section>
+
+					<section>
+						<h3>JS анимации</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Выполняются в основном потоке</p></div>
+							<div class="fragment"><p>Полный контроль</p></div>
+							<div class="fragment"><p>Сложнее чем CSS анимации</p></div>
+						</div>	
+					</section>
+
+					<section>
+						<h3>Пример: GreenSock (GSAP)</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Код и пример</p></div>
+						</div>	
+					</section>
+
+					<section>
+						<h3>Пример: GreenSock (GSAP)</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>Код и пример</p></div>
+						</div>	
+					</section>
+
+				</section>
+
+				<!-- WebGL -->
+				<section>
+
+					<section>
+						<h3>"Хватит квадратиков, покажи что нибудь красивое!"</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>котика сюда</p></div>
+							<div class="fragment fade-in"><p><a href="https://asaro.co.uk/" target="_blank">пример</a></p></div>
+						</div>	
+					</section>
+
+				</section>
+
+				
+				<!-- Easing -->
+				<section>
+					<h3>Easing</h3>
+					<div>
+						<div class="fragment"><p> — функция плавности, определяет скорость течения анимации</p></div>
+						<br>
+						<div class="fragment"><p>Примеры пресетов <a href="https://easings.net/ru" target="_blank">easings.net</a></p></div>
+						<div class="fragment"><p>Кривые Безье <a href="http://cubic-bezier.com/" target="_blank">cubic-bezier.com</a></p></div>
 					</div>	
 				</section>
 
@@ -62,7 +168,7 @@
 						<div class="fragment fade-in">
 							<br>
 							<blockquote>
-								&ldquo;Производительность — это искусство избегать работую&rdquo;
+								&ldquo;Производительность — это искусство избегать работу&rdquo;
 							</blockquote>
 						<!-- </div>
 						<div class="fragment fade-in"> -->
@@ -72,7 +178,8 @@
 					</section>
 					
 					<section>
-						<h3>60 FPS</h3>
+						<h3>Что такое хорошо?</h3>
+						<h1 class="fragment fade-in">60 FPS</h1>
 						<div class="fragment fade-in"><p>(frame rate per second)</p></div>
 						<div class="fragment fade-in"><p>1 frame ~ 16.6 ms</p></div>
 					</section>

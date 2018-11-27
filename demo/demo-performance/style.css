@@ -1,0 +1,80 @@
+body{
+    display: block;
+    padding: 0;
+    margin: 0;
+    background: #000000;
+    overflow-x: hidden;
+}
+*{
+    outline: none;
+}
+.form{
+    padding: 20px 30px;
+}
+.form select{
+    border-radius: 4px;
+    border: 1px solid greenyellow;
+    width: 200px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+.form button{
+    border-radius: 4px;
+    
+    width: 100px;
+    height: 40px;
+    padding: 0 10px;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.form button.start{
+    border: 1px solid greenyellow;
+    background: greenyellow;
+}
+.form button.stop{
+    border: 1px solid #e61919;
+    background: #e61919;
+}
+.container{
+    font-size: 0;
+    padding: 1px 5px;
+}
+.item{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: greenyellow;
+    margin: 10px 5px;
+    border-radius: 4px;
+    animation-duration: 4000ms;
+
+    transform-origin: center center;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.item.animation-moveLeft{
+    animation-name: moveLeft;
+}
+.item.animation-moveTransform{
+    animation-name: moveTransform;
+    will-change: transform;
+}
+
+@keyframes moveLeft {
+    from { left: 0; }
+    25%  { left: -100px; }
+    50%  { left: 0; }
+    75%  { left: 100px; }
+    to   { left: 0; }
+}
+@keyframes moveTransform {
+    from { transform: translateX(0); }
+    25%  { transform: translateX(-100px); }
+    50%  { transform: translateX(0); }
+    75%  { transform: translateX(100px); }
+    to   { transform: translateX(0); }
+}
