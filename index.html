@@ -25,9 +25,7 @@
 		<div class="reveal">
 			<div class="slides">
 
-					
-
-				<section class="bg-white">
+				<section>
 					<br><br><br><br>
 					<h2>Анимации в браузере</h2>
 					<br><br><br>
@@ -44,7 +42,7 @@
 							<p>CSS</p>
 							<small><ul>
 								<li class="fragment fade-in">transition</li>
-								<li class="fragment fade-in">@keyframe</li>
+								<li class="fragment fade-in">animation (@keyframe)</li>
 							</ul></small>
 						</div>
 						<div class="fragment fade-in"><p>SVG</p></div>
@@ -74,17 +72,98 @@
 
 					<section>
 						<h3>Пример: transition</h3>
+<pre><code>
+  .element{
+    transition: transform 1s ease-in;
+  }
+
+  .element:hover{
+    transform: rotate(360deg) translateY(40px);
+  }
+
+</code></pre>
+
+						<div class="animation-rotate--transition">Hover Me</div>
+						<style>
+							.animation-rotate--transition{
+								display: flex;
+								align-items: center;
+								width: 150px;
+								height: 150px;
+								margin: 0 auto !important;
+								background: limegreen;
+								transition: transform 0.5s ease-in;
+							}
+							.animation-rotate--transition:hover{
+								transform: rotate(360deg) translateY(40px);
+							}
+						</style>
+					</section>
+
+					<section>
+						<h3>Свойство transition состоит из:</h3>
 						<div style="text-align: left;">
-							<div class="fragment"><p>Код и пример</p></div>
+							<small>
+								<p><strong>transition-property</strong> — указываем какие css свойства нужно анимировать ( можно all )</p>
+								<p><strong>transition-duration</strong> —  продолжительность анимации</p>
+								<p><strong>transition-timing-function</strong> —  временная функция</p>
+								<p><strong>transition-delay</strong> —  задержка перед началом анимации</p>
+							</small>
 						</div>	
 					</section>
 
 					<section>
-						<h3>Пример: @keyframe</h3>
-						<div style="text-align: left;">
-							<div class="fragment"><p>Код и пример</p></div>
-						</div>	
-					</section>
+							<h3>Пример: animation (@keyframe)</h3>
+<pre><code>
+  .element:hover{
+    animation: animtaion-rotate 1s ease-in;
+  }
+
+  @keyframe animtaion-rotate {
+    from { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+</code></pre>
+							  
+							<div class="animation-rotate--keyframe">Hover Me</div>
+							<style>
+								.animation-rotate--keyframe{
+									display: flex;
+									align-items: center;
+									width: 150px;
+									height: 150px;
+									margin: 0 auto !important;
+									background: limegreen;
+									box-sizing: border-box;
+								}
+								.animation-rotate--keyframe:hover{
+									animation: keyframe-rotate 1s ease-in;
+								}
+								@keyframes keyframe-rotate {
+									from {transform: rotate(0deg);}
+									50% {transform: rotate(360deg);}
+									to {transform: rotate(0deg);}
+								}
+							</style>	
+						</section>
+
+						<section>
+							<h3>Свойство animation состоит из:</h3>
+							<div style="text-align: left;">
+								<small>
+									<p><strong>animation-name</strong> —  задаёт @keyframes, настраивающий кадры анимации</p>
+									<p><strong>animation-delay</strong> —  задержка перед началом анимации</p>
+									<p><strong>animation-iteration-count</strong> —  количество повторенией ( infinite для бесконечного повторения анимации )</p>
+									<p><strong>animation-duration</strong> —  продолжительность цикла анимации</p>
+									<p><strong>animation-direction</strong> —  направление анимации</p>
+									<p><strong>animation-timing-function</strong> —  временная функция</p>
+									<p><strong>animation-fill-mode</strong> —  значения, используемые анимацией, до и после исполнения</p>
+									<p><strong>animation-play-state</strong> —  позволяе приостановить и возобновить анимацию.</p>
+								</small>
+							</div>	
+						</section>
 
 				</section>
 
@@ -134,20 +213,6 @@
 					</section>
 
 				</section>
-
-				<!-- WebGL -->
-				<section>
-
-					<section>
-						<h3>"Хватит квадратиков, покажи что нибудь красивое!"</h3>
-						<div style="text-align: left;">
-							<div class="fragment"><p>котика сюда</p></div>
-							<div class="fragment fade-in"><p><a href="https://asaro.co.uk/" target="_blank">пример</a></p></div>
-						</div>	
-					</section>
-
-				</section>
-
 				
 				<!-- Easing -->
 				<section>
@@ -159,6 +224,8 @@
 						<div class="fragment"><p>Кривые Безье <a href="http://cubic-bezier.com/" target="_blank">cubic-bezier.com</a></p></div>
 					</div>	
 				</section>
+
+
 
 				<!-- Что такое производительность? -->
 				<section>
@@ -233,7 +300,19 @@
 
 				</section>
 
-				
+								
+				<!-- WebGL -->
+				<section>
+
+					<section>
+						<h3>"Хватит квадратиков, покажи что нибудь красивое!"</h3>
+						<div style="text-align: left;">
+							<div class="fragment"><p>котика сюда</p></div>
+							<div class="fragment fade-in"><p><a href="https://asaro.co.uk/" target="_blank">пример</a></p></div>
+						</div>	
+					</section>
+
+				</section>
 
 
 				<section>
